@@ -20,6 +20,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import nl.logiconline.neptune.World;
 import nl.logiconline.neptune.assets.gfx.Sprite;
 import nl.logiconline.neptune.assets.gfx.SpriteSheet;
+import nl.logiconline.neptune.system.NeptuneException;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -31,7 +32,7 @@ public class ResourceManager {
 	private HashMap<String, SpriteSheet> spritesheets = new HashMap<String, SpriteSheet>();
 	private HashMap<String, Sprite> sprites = new HashMap<String, Sprite>();
 
-	public void initResourceManager(String resourcefile) {
+	public void initResourceManager(String resourcefile) throws NeptuneException {
 		try {
 			Document doc = this.readXML(World.class.getResourceAsStream(resourcefile));
 			this.parseDocument(doc);

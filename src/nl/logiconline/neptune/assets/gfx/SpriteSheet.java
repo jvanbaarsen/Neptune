@@ -9,6 +9,8 @@ package nl.logiconline.neptune.assets.gfx;
  */
 import java.awt.image.BufferedImage;
 
+import nl.logiconline.neptune.system.NeptuneException;
+
 public class SpriteSheet {
 
 	private BufferedImage image;
@@ -42,7 +44,7 @@ public class SpriteSheet {
 	 * @param int y the Y position of the sprite
 	 * @return Sprite
 	 */
-	public Sprite getSprite(int x, int y) {
+	public Sprite getSprite(int x, int y) throws NeptuneException {
 		if((x >= 0) && (y >= y) && (x <= this.loadedSprites.length) && (y <= this.loadedSprites[x].length)) {
 			if(this.loadedSprites[x][y] != null) {
 				return this.loadedSprites[x][y];
@@ -62,7 +64,7 @@ public class SpriteSheet {
 
 
 		} else {
-			throw new IllegalArgumentException("Trying to load a sprite that is out of spritesheet bound (X:"+ x +" Y:"+ y +")");
+			throw new NeptuneException("Trying to load a sprite that is out of spritesheet bound (X:"+ x +" Y:"+ y +")");
 		}
 	}
 

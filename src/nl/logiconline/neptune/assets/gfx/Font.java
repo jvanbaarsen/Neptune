@@ -9,6 +9,7 @@ package nl.logiconline.neptune.assets.gfx;
  */
 import nl.logiconline.neptune.system.Gfx;
 import nl.logiconline.neptune.system.Neptune;
+import nl.logiconline.neptune.system.NeptuneException;
 import nl.logiconline.neptune.utils.Point2D;
 
 public class Font {
@@ -25,11 +26,11 @@ public class Font {
 		return Font.fontInstance;
 	}
 
-	public void draw(Gfx g, Point2D position, String text) {
+	public void draw(Gfx g, Point2D position, String text) throws NeptuneException {
 		this.draw(g, position.getX(), position.getY(), text);
 	}
 
-	public void draw(Gfx g, int x, int y, String text) {
+	public void draw(Gfx g, int x, int y, String text) throws NeptuneException {
 		text = text.toUpperCase();
 		for(int i = 0; i < text.length(); i++) {
 			int glyphPos = this.glyphs.indexOf(text.charAt(i));

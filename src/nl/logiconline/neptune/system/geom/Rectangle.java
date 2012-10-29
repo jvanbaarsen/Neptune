@@ -8,6 +8,7 @@ package nl.logiconline.neptune.system.geom;
  * (c) 2012 - LogicOnline
  */
 import nl.logiconline.neptune.system.Gfx;
+import nl.logiconline.neptune.system.NeptuneException;
 
 
 public class Rectangle extends Shape {
@@ -23,7 +24,7 @@ public class Rectangle extends Shape {
 	}
 
 	@Override
-	public void draw() {
+	public void draw() throws NeptuneException {
 		if (this.fill) {
 			for (int x = super.x; x < (super.x + this.width); x++) {
 				for (int y = super.y; y < (super.y + this.height); y++) {

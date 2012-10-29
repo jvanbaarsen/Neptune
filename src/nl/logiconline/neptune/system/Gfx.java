@@ -52,7 +52,15 @@ public class Gfx {
 		return this.height;
 	}
 
-	public void drawSprite(int x, int y, Sprite sprite) {
+	public void drawSprite(Point2D position, Sprite sprite) throws NeptuneException  {
+		this.drawSprite(position.getX(), position.getY(), sprite);
+	}
+
+	public void drawSprite(Sprite sprite) throws NeptuneException  {
+		this.drawSprite(0, 0, sprite);
+	}
+
+	public void drawSprite(int x, int y, Sprite sprite) throws NeptuneException {
 		int index = 0;
 		for (int sy = 0; sy < sprite.getHeight(); sy++) {
 			for (int sx = 0; sx < sprite.getWidth(); sx++) {
@@ -61,11 +69,27 @@ public class Gfx {
 		}
 	}
 
-	public void drawText(int x, int y, String text) {
+	public void drawText(Point2D position, String text) throws NeptuneException {
+		this.drawText(position.getX(), position.getY(), text);
+	}
+
+	public void drawText(int x, int y, String text) throws NeptuneException {
 		Font.getInstance().draw(this, x, y, text);
 	}
 
-	public void setPixel(int x, int y, int color) {
+	public void setPixel(Point2D position) throws NeptuneException  {
+		this.setPixel(position.getX(), position.getY(), this.color);
+	}
+
+	public void setPixel(int x, int y) throws NeptuneException  {
+		this.setPixel(x, y, this.color);
+	}
+
+	public void setPixel(Point2D position, int color) throws NeptuneException  {
+		this.setPixel(position.getX(), position.getY(), color);
+	}
+
+	public void setPixel(int x, int y, int color) throws NeptuneException {
 		if (this.camera != null) {
 			x = x - this.camera.getScrollX();
 			y = y - this.camera.getScrollY();
@@ -94,60 +118,32 @@ public class Gfx {
 	 * SHAPES -- SHAPES -- SHAPES
 	 */
 
-	public void drawCirc(int xCenter, int yCenter, int radius) {
+	public void drawCircle(int xCenter, int yCenter, int radius) throws NeptuneException {
 		new Circle(this, xCenter, yCenter, radius, false).draw();
 	}
 
-	public void fillCirc(int orgX, int orgY, int radius) {
+	public void fillCircle(int orgX, int orgY, int radius) throws NeptuneException {
 		new Circle(this, orgX, orgY, radius, true).draw();
 	}
 
-	public void drawRect(int x, int y, int width, int height) {
-		new Rectangle(this, x, y, width, height, false).draw();
-	}
-
-	public void fillRect(int x, int y, int width, int height) {
-		new Rectangle(this, x, y, width, height, true).draw();
-	}
-
-	public void drawLine(int x1, int y1, int x2, int y2) {
-		new Line(this, x1, y1, x2, y2).draw();
-	}
-
-	/**
-	 * OVERLOADS -- OVERLOADS -- OVERLOADS
-	 */
-
-	public void drawText(Point2D position, String text) {
-		this.drawText(position.getX(), position.getY(), text);
-	}
-
-	public void setPixel(Point2D position) {
-		this.setPixel(position.getX(), position.getY(), this.color);
-	}
-
-	public void setPixel(int x, int y) {
-		this.setPixel(x, y, this.color);
-	}
-
-	public void setPixel(Point2D position, int color) {
-		this.setPixel(position.getX(), position.getY(), color);
-	}
-
-	public void drawSprite(Point2D position, Sprite sprite) {
-		this.drawSprite(position.getX(), position.getY(), sprite);
-	}
-
-	public void drawSprite(Sprite sprite) {
-		this.drawSprite(0, 0, sprite);
-	}
-
-	public void fillRect(Point2D position, int width, int height) {
-		this.fillRect(position.getX(), position.getY(), width, height);
-	}
-
-	public void drawRect(Point2D position, int width, int height) {
+	public void drawRect(Point2D position, int width, int height) throws NeptuneException  {
 		this.drawRect(position.getX(), position.getY(), width, height);
 	}
 
+	public void drawRect(int x, int y, int width, int height) throws NeptuneException {
+		new Rectangle(this, x, y, width, height, false).draw();
+	}
+
+	public void fillRect(Point2D position, int width, int height) throws NeptuneException  {
+		this.fillRect(position.getX(), position.getY(), width, height);
+	}
+
+
+	public void fillRect(int x, int y, int width, int height) throws NeptuneException {
+		new Rectangle(this, x, y, width, height, true).draw();
+	}
+
+	public void drawLine(int x1, int y1, int x2, int y2) throws NeptuneException {
+		new Line(this, x1, y1, x2, y2).draw();
+	}
 }

@@ -14,6 +14,7 @@ import java.util.Comparator;
 import nl.logiconline.neptune.entities.Entity;
 import nl.logiconline.neptune.system.Camera;
 import nl.logiconline.neptune.system.Gfx;
+import nl.logiconline.neptune.system.NeptuneException;
 
 public abstract class State {
 
@@ -24,7 +25,7 @@ public abstract class State {
 	public State() {
 	}
 
-	public void init() {
+	public void init() throws NeptuneException {
 
 	}
 
@@ -47,7 +48,7 @@ public abstract class State {
 		}
 	}
 
-	public void addEntity(Entity e) {
+	public void addEntity(Entity e) throws NeptuneException {
 		if (!this.entities.contains(e)) {
 			this.entities.add(e);
 			e.setState(this);
@@ -67,7 +68,7 @@ public abstract class State {
 		return this.camera;
 	}
 
-	public void update() {
+	public void update() throws NeptuneException {
 		//Update all the normal entities
 		if (this.entities.size() > 0) {
 			for (int i = 0; i < this.entities.size(); i++) {
@@ -81,7 +82,7 @@ public abstract class State {
 		}
 	}
 
-	public void render(Gfx g) {
+	public void render(Gfx g) throws NeptuneException {
 
 		if (g.getCamra() == null) {
 			g.setCamera(this.camera);

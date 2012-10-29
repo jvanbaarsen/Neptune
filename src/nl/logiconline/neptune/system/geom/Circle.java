@@ -8,6 +8,7 @@ package nl.logiconline.neptune.system.geom;
  * (c) 2012 - LogicOnline
  */
 import nl.logiconline.neptune.system.Gfx;
+import nl.logiconline.neptune.system.NeptuneException;
 
 public class Circle extends Shape {
 
@@ -21,7 +22,7 @@ public class Circle extends Shape {
 	}
 
 	@Override
-	public void draw() {
+	public void draw() throws NeptuneException {
 		if (!this.fill) {
 			int pix = super.g.getColor();
 			int x = 0;
@@ -50,7 +51,7 @@ public class Circle extends Shape {
 		}
 	}
 
-	private void circlePoints(int cx, int cy, int x, int y, int pix) {
+	private void circlePoints(int cx, int cy, int x, int y, int pix) throws NeptuneException {
 		if (x == 0) {
 			super.g.setPixel(cx, cy + y);
 			super.g.setPixel(cx, cy - y);

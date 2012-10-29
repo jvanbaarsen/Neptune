@@ -8,6 +8,7 @@ package nl.logiconline.neptune.system.geom;
  * (c) 2012 - LogicOnline
  */
 import nl.logiconline.neptune.system.Gfx;
+import nl.logiconline.neptune.system.NeptuneException;
 
 abstract class Shape {
 
@@ -20,6 +21,6 @@ abstract class Shape {
 		this.y = y;
 	}
 
-	public abstract void draw();
+	public abstract void draw() throws NeptuneException;
 
 }

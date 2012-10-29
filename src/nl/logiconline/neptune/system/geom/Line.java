@@ -8,11 +8,12 @@ package nl.logiconline.neptune.system.geom;
  * (c) 2012 - LogicOnline
  */
 import nl.logiconline.neptune.system.Gfx;
+import nl.logiconline.neptune.system.NeptuneException;
 
 
 public class Line extends Shape {
 
-	int x2, y2;
+	private int x2, y2;
 
 	public Line(Gfx g, int x, int y, int x2, int y2) {
 		super(g, x, y);
@@ -21,7 +22,7 @@ public class Line extends Shape {
 	}
 
 	@Override
-	public void draw() {
+	public void draw() throws NeptuneException {
 		int deltax = Math.abs(this.x2 - super.x);
 		int deltay = Math.abs(this.y2 - super.y);
 		int x = super.x;

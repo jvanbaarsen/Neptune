@@ -1,5 +1,12 @@
 package nl.logiconline.neptune.utils;
-
+/**
+ * Neptune
+ * ==========
+ * 
+ * @author J. van Baarsen <jeroen@logiconline.nl>
+ * @package nl.logiconline.neptune.utils
+ * (c) 2012 - LogicOnline
+ */
 public class Point2D {
 	public int x = 0, y = 0;
 	public Point2D(int x, int y) {

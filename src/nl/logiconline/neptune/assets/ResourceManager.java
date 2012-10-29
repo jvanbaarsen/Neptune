@@ -1,5 +1,12 @@
 package nl.logiconline.neptune.assets;
-
+/**
+ * Neptune
+ * ==========
+ * 
+ * @author J. van Baarsen <jeroen@logiconline.nl>
+ * @package nl.logiconline.neptune.assets
+ * (c) 2012 - LogicOnline
+ */
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
@@ -18,8 +25,6 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
-
-
 
 public class ResourceManager {
 

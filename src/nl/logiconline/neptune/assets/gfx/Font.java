@@ -1,7 +1,14 @@
 package nl.logiconline.neptune.assets.gfx;
-
-import nl.logiconline.neptune.World;
+/**
+ * Neptune
+ * ==========
+ * 
+ * @author J. van Baarsen <jeroen@logiconline.nl>
+ * @package nl.logiconline.neptune.assets.gfx
+ * (c) 2012 - LogicOnline
+ */
 import nl.logiconline.neptune.system.Gfx;
+import nl.logiconline.neptune.system.Neptune;
 import nl.logiconline.neptune.utils.Point2D;
 
 public class Font {
@@ -29,7 +36,7 @@ public class Font {
 			if(glyphPos >= 0) {
 				int row = glyphPos / this.glyphsPerRow;
 				int col = (glyphPos - (row * this.glyphsPerRow));
-				g.drawSprite((World.getResourceManager().getSpritesheet("font").getSpriteWidth() * i) + x, y, World.getResourceManager().getSpritesheet("font").getSprite(col, row + this.startPosFirstGlyph));
+				g.drawSprite((Neptune.getResourceManager().getSpritesheet("font").getSpriteWidth() * i) + x, y, Neptune.getResourceManager().getSpritesheet("font").getSprite(col, row + this.startPosFirstGlyph));
 			}
 		}
 	}

@@ -1,5 +1,12 @@
 package nl.logiconline.neptune.utils;
-
+/**
+ * Neptune
+ * ==========
+ * 
+ * @author J. van Baarsen <jeroen@logiconline.nl>
+ * @package nl.logiconline.neptune.utils
+ * (c) 2012 - LogicOnline
+ */
 import java.awt.MouseInfo;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;

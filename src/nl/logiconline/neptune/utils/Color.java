@@ -1,5 +1,12 @@
 package nl.logiconline.neptune.utils;
-
+/**
+ * Neptune
+ * ==========
+ * 
+ * @author J. van Baarsen <jeroen@logiconline.nl>
+ * @package nl.logiconline.neptune.utils
+ * (c) 2012 - LogicOnline
+ */
 public class Color {
 	public final static int WHITE = 0xFFFFFFFF;
 	public final static int AZURE = 0xFFF0FFFF;

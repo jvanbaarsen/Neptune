@@ -1,5 +1,12 @@
 package nl.logiconline.neptune.assets.gfx;
-
+/**
+ * Neptune
+ * ==========
+ * 
+ * @author J. van Baarsen <jeroen@logiconline.nl>
+ * @package nl.logiconline.neptune.assets.gfx
+ * (c) 2012 - LogicOnline
+ */
 import java.awt.image.BufferedImage;
 
 public class SpriteSheet {

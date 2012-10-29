@@ -1,6 +1,12 @@
 package nl.logiconline.neptune.entities;
-
-
+/**
+ * Neptune
+ * ==========
+ * 
+ * @author J. van Baarsen <jeroen@logiconline.nl>
+ * @package nl.logiconline.neptune.entities
+ * (c) 2012 - LogicOnline
+ */
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;

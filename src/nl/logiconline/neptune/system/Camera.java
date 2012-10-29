@@ -1,5 +1,12 @@
 package nl.logiconline.neptune.system;
-
+/**
+ * Neptune
+ * ==========
+ * 
+ * @author J. van Baarsen <jeroen@logiconline.nl>
+ * @package nl.logiconline.neptune.system
+ * (c) 2012 - LogicOnline
+ */
 import nl.logiconline.neptune.World;
 import nl.logiconline.neptune.entities.Entity;
 

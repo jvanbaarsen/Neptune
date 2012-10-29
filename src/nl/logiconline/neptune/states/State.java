@@ -1,5 +1,12 @@
 package nl.logiconline.neptune.states;
-
+/**
+ * Neptune
+ * ==========
+ * 
+ * @author J. van Baarsen <jeroen@logiconline.nl>
+ * @package nl.logiconline.neptune.states
+ * (c) 2012 - LogicOnline
+ */
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;

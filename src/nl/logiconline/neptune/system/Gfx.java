@@ -1,7 +1,17 @@
 package nl.logiconline.neptune.system;
-
+/**
+ * Neptune
+ * ==========
+ * 
+ * @author J. van Baarsen <jeroen@logiconline.nl>
+ * @package nl.logiconline.neptune.system
+ * (c) 2012 - LogicOnline
+ */
 import nl.logiconline.neptune.assets.gfx.Font;
 import nl.logiconline.neptune.assets.gfx.Sprite;
+import nl.logiconline.neptune.system.geom.Circle;
+import nl.logiconline.neptune.system.geom.Line;
+import nl.logiconline.neptune.system.geom.Rectangle;
 import nl.logiconline.neptune.utils.Color;
 import nl.logiconline.neptune.utils.Point2D;
 

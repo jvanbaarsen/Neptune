@@ -1,5 +1,12 @@
 package nl.logiconline.neptune.utils;
-
+/**
+ * Neptune
+ * ==========
+ * 
+ * @author J. van Baarsen <jeroen@logiconline.nl>
+ * @package nl.logiconline.neptune.utils
+ * (c) 2012 - LogicOnline
+ */
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.HashMap;

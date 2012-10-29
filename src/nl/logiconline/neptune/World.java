@@ -1,5 +1,12 @@
 package nl.logiconline.neptune;
-
+/**
+ * Neptune
+ * ==========
+ * 
+ * @author J. van Baarsen <jeroen@logiconline.nl>
+ * @package nl.logiconline.neptune
+ * (c) 2012 - LogicOnline
+ */
 import java.awt.Canvas;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -11,6 +18,7 @@ import java.util.HashMap;
 import nl.logiconline.neptune.assets.ResourceManager;
 import nl.logiconline.neptune.states.State;
 import nl.logiconline.neptune.system.Gfx;
+import nl.logiconline.neptune.system.Neptune;
 import nl.logiconline.neptune.utils.Color;
 import nl.logiconline.neptune.utils.KeyInput;
 import nl.logiconline.neptune.utils.Log;
@@ -18,13 +26,9 @@ import nl.logiconline.neptune.utils.Mouse;
 
 public final class World extends Canvas implements Runnable {
 	private static final long serialVersionUID = 1L;
+
 	private static World instance = null;
 	protected static ResourceManager resourceManager;
-
-	public static boolean SHOW_FPS = true;
-	public static boolean SHOW_DEBUG = true;
-	public static boolean SHOW_ERROR = false;
-	public static boolean SHOW_EVENTS = false;
 
 	private int width, height, scale;
 	private int background = Color.BLACK;
@@ -102,7 +106,7 @@ public final class World extends Canvas implements Runnable {
 
 			if ((System.currentTimeMillis() - lastTimer1) > 1000) {
 				lastTimer1 += 1000;
-				if (World.SHOW_FPS) {
+				if (Neptune.SHOW_FPS) {
 					Log.debug(ticks + " ticks, " + frames + " fps");
 				}
 				frames = 0;
@@ -146,12 +150,14 @@ public final class World extends Canvas implements Runnable {
 		bs.show();
 	}
 
+
+	/**
+	 * Deprecated: Use Neptune.getResourceManager instead
+	 * @return
+	 */
+	@Deprecated
 	public static ResourceManager getResourceManager() {
-		if (World.resourceManager == null) {
-			World.resourceManager = new ResourceManager();
-			World.resourceManager.initResourceManager("/resources.xml");
-		}
-		return World.resourceManager;
+		return Neptune.getResourceManager();
 	}
 
 	public boolean addState(int id, State state) {

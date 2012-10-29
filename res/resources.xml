@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<!-- 
+		De verschillende mogelijkheden
+		SPRITESHEET:	<spritesheet name="KEY" file="filename" width="spriteWidth" height="spriteHeight"/>
+	 	SPRITE:			<sprite name="KEY" file="name"/>		
+	 -->
+	<spritesheet name="sprites" file="/images/sprites.png" width="12" height="12"/>
+	<spritesheet name="tiles" file="/images/tiles.png" width="12" height="12"/>
+	<spritesheet name="font" file="/images/font.png" width="8" height="8"/>
+	<sprite name="map" file="/images/map.png"/>
+	<sprite name="details" file="/images/details.png"/>
+	<sprite name="map2" file="/images/map2.png"/>
+	<sprite name="map3" file="/images/map3.png"/>
+</resources>

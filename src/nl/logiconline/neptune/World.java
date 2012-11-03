@@ -23,8 +23,9 @@ import nl.logiconline.neptune.states.State;
 import nl.logiconline.neptune.system.Gfx;
 import nl.logiconline.neptune.system.Neptune;
 import nl.logiconline.neptune.system.NeptuneException;
+import nl.logiconline.neptune.system.input.InputHandler;
+import nl.logiconline.neptune.system.input.Keys;
 import nl.logiconline.neptune.utils.Color;
-import nl.logiconline.neptune.utils.KeyInput;
 import nl.logiconline.neptune.utils.Log;
 import nl.logiconline.neptune.utils.Mouse;
 
@@ -44,7 +45,7 @@ public final class World extends Canvas implements Runnable {
 	private State state = null;
 	private Gfx g;
 
-	private KeyInput keyInput = null;
+	private InputHandler inputHandler = null;
 
 	public World() {
 	}
@@ -146,6 +147,9 @@ public final class World extends Canvas implements Runnable {
 		if (this.state != null) {
 			this.state.update();
 		}
+		if(this.inputHandler != null) {
+			Keys.update();
+		}
 
 	}
 
@@ -228,12 +232,10 @@ public final class World extends Canvas implements Runnable {
 	}
 
 	public void enableKeyInput() {
-		this.keyInput = new KeyInput();
-		super.addKeyListener(this.keyInput);
-	}
-
-	public KeyInput getKeyInput() {
-		return this.keyInput;
+		if(this.inputHandler == null) {
+			this.inputHandler = new InputHandler();
+			super.addKeyListener(this.inputHandler);
+		}
 	}
 
 	public State getState() {

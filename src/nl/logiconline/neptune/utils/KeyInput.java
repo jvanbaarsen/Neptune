@@ -11,6 +11,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.HashMap;
 
+@Deprecated
 public class KeyInput implements KeyListener {
 
 	private HashMap<Integer, Boolean> pressed = new HashMap<Integer, Boolean>();
@@ -40,7 +41,6 @@ public class KeyInput implements KeyListener {
 
 	@Override
 	public void keyTyped(KeyEvent e) {
-
 	}
 
 }

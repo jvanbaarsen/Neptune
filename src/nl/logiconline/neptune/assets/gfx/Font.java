@@ -30,7 +30,7 @@ public class Font {
 		this.draw(g, position.getX(), position.getY(), text);
 	}
 
-	public void draw(Gfx g, int x, int y, String text) throws NeptuneException {
+	public void draw(Gfx g, double x, double y, String text) throws NeptuneException {
 		text = text.toUpperCase();
 		for(int i = 0; i < text.length(); i++) {
 			int glyphPos = this.glyphs.indexOf(text.charAt(i));

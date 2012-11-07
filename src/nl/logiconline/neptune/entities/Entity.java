@@ -42,7 +42,7 @@ public abstract class Entity {
 			}
 		}
 		if(this.enableSorting) {
-			this.zIndex = this.getY();
+			this.zIndex = (int)this.getY();
 		}
 	}
 
@@ -121,19 +121,19 @@ public abstract class Entity {
 		return this.position;
 	}
 
-	public int getX() {
+	public double getX() {
 		return this.position.getX();
 	}
 
-	public void setX(int x) {
+	public void setX(double x) {
 		this.position.x = x;
 	}
 
-	public int getY() {
+	public double getY() {
 		return this.position.getY();
 	}
 
-	public void setY(int y) {
+	public void setY(double y) {
 		this.position.y = y;
 	}
 
@@ -186,7 +186,7 @@ public abstract class Entity {
 		return this.collisionTypes.contains(type);
 	}
 
-	public Entity collide(String type, int x, int y) {
+	public Entity collide(String type, double x, double y) {
 		if((type == null) || type.isEmpty() || (this.getState() == null)) {
 			return null;
 		}
@@ -206,7 +206,7 @@ public abstract class Entity {
 		return null;
 	}
 
-	public Entity collide(String[] types, int x, int y) {
+	public Entity collide(String[] types, double x, double y) {
 		for (String type : types) {
 			Entity e = this.collide(type, x, y);
 			if (e != null) {

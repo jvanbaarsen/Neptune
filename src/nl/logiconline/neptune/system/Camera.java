@@ -19,25 +19,25 @@ public class Camera {
 		this.height = height;
 	}
 
-	public int getCameraX() {
+	public double getCameraX() {
 		if (this.entity != null) {
 			return this.entity.getX();
 		}
 		return this.x;
 	}
 
-	public int getCameraY() {
+	public double getCameraY() {
 		if (this.entity != null) {
 			return this.entity.getY();
 		}
 		return this.y;
 	}
 
-	public int getScrollX() {
+	public double getScrollX() {
 		return this.getCameraX() - (Neptune.getWorld().getCanvasWidth() / 2);
 	}
 
-	public int getScrollY() {
+	public double getScrollY() {
 		return this.getCameraY() - (Neptune.getWorld().getCanvasHeight() / 2);
 	}
 

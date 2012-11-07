@@ -60,7 +60,7 @@ public class Gfx {
 		this.drawSprite(0, 0, sprite);
 	}
 
-	public void drawSprite(int x, int y, Sprite sprite) throws NeptuneException {
+	public void drawSprite(double x, double y, Sprite sprite) throws NeptuneException {
 		int index = 0;
 		for (int sy = 0; sy < sprite.getHeight(); sy++) {
 			for (int sx = 0; sx < sprite.getWidth(); sx++) {
@@ -73,12 +73,16 @@ public class Gfx {
 		this.drawText(position.getX(), position.getY(), text);
 	}
 
-	public void drawText(int x, int y, String text) throws NeptuneException {
+	public void drawText(double x, double y, String text) throws NeptuneException {
 		Font.getInstance().draw(this, x, y, text);
 	}
 
 	public void setPixel(Point2D position) throws NeptuneException  {
 		this.setPixel(position.getX(), position.getY(), this.color);
+	}
+
+	public void setPixel(double x, double y) throws NeptuneException {
+		this.setPixel((int)x, (int)y, this.color);
 	}
 
 	public void setPixel(int x, int y) throws NeptuneException  {
@@ -89,10 +93,14 @@ public class Gfx {
 		this.setPixel(position.getX(), position.getY(), color);
 	}
 
+	public void setPixel(double x, double y, int color) throws NeptuneException {
+		this.setPixel((int)x, (int)y, color);
+	}
+
 	public void setPixel(int x, int y, int color) throws NeptuneException {
 		if (this.camera != null) {
-			x = x - this.camera.getScrollX();
-			y = y - this.camera.getScrollY();
+			x = x - (int)this.camera.getScrollX();
+			y = y - (int)this.camera.getScrollY();
 		}
 
 		if ((x >= 0) && (x < this.width) && (y >= 0) && (y < this.height)) {
@@ -130,7 +138,7 @@ public class Gfx {
 		this.drawRect(position.getX(), position.getY(), width, height);
 	}
 
-	public void drawRect(int x, int y, int width, int height) throws NeptuneException {
+	public void drawRect(double x, double y, int width, int height) throws NeptuneException {
 		new Rectangle(this, x, y, width, height, false).draw();
 	}
 
@@ -139,7 +147,7 @@ public class Gfx {
 	}
 
 
-	public void fillRect(int x, int y, int width, int height) throws NeptuneException {
+	public void fillRect(double x, double y, int width, int height) throws NeptuneException {
 		new Rectangle(this, x, y, width, height, true).draw();
 	}
 

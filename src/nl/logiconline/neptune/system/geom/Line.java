@@ -23,12 +23,12 @@ public class Line extends Shape {
 
 	@Override
 	public void draw() throws NeptuneException {
-		int deltax = Math.abs(this.x2 - super.x);
-		int deltay = Math.abs(this.y2 - super.y);
-		int x = super.x;
-		int y = super.y;
+		double deltax = Math.abs(this.x2 - super.x);
+		double deltay = Math.abs(this.y2 - super.y);
+		double x = super.x;
+		double y = super.y;
 
-		int xinc1, xinc2, yinc1, yinc2, den, num, numadd, numpixels, curpixel;
+		double xinc1, xinc2, yinc1, yinc2, den, num, numadd, numpixels, curpixel;
 
 		if (this.x2 >= super.x) {
 			xinc1 = 1;

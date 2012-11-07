@@ -1,4 +1,6 @@
 package nl.logiconline.neptune.system;
+
+
 /**
  * Neptune
  * ==========
@@ -17,6 +19,7 @@ public class NeptuneException extends Exception {
 	 */
 	public NeptuneException(String message) {
 		super(message);
+
 	}
 
 	/**

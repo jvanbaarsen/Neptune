@@ -13,9 +13,9 @@ import nl.logiconline.neptune.system.NeptuneException;
 abstract class Shape {
 
 	protected Gfx g;
-	protected int x, y;
+	protected double x, y;
 
-	public Shape(Gfx g, int x, int y) {
+	public Shape(Gfx g, double x, double y) {
 		this.g = g;
 		this.x = x;
 		this.y = y;

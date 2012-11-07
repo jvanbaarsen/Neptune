@@ -1,14 +1,18 @@
 package nl.logiconline.neptune.system.input;
-
+/**
+ * Neptune
+ * ==========
+ * 
+ * @author J. van Baarsen <jeroen@logiconline.nl>
+ * @package nl.logiconline.neptune.system.input
+ * (c) 2012 - LogicOnline
+ */
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-
-import nl.logiconline.neptune.utils.Log;
 
 public class InputHandler implements KeyListener {
 	@Override
 	public void keyPressed(KeyEvent e) {
-		Log.debug("Key pressed");
 		this.toggle(e, true);
 	}
 
@@ -22,7 +26,6 @@ public class InputHandler implements KeyListener {
 	}
 
 	private void toggle(KeyEvent e, boolean state) {
-
 		Keys.toggle(e.getKeyCode(), state);
 	}
 }

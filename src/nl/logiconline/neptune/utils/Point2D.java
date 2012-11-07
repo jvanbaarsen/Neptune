@@ -7,14 +7,15 @@ package nl.logiconline.neptune.utils;
  * @package nl.logiconline.neptune.utils
  * (c) 2012 - LogicOnline
  */
-public class Point2D {
-	public int x = 0, y = 0;
+public class Point2D extends java.awt.geom.Point2D.Double{
+	private static final long serialVersionUID = 1L;
 	public Point2D(int x, int y) {
 		this.x = x;
 		this.y = y;
 	}
 
-	public int getX() {
+	@Override
+	public double getX() {
 		return this.x;
 	}
 
@@ -22,7 +23,8 @@ public class Point2D {
 		this.x = x;
 	}
 
-	public int getY() {
+	@Override
+	public double getY() {
 		return this.y;
 	}
 

@@ -15,7 +15,7 @@ public class Circle extends Shape {
 	private boolean fill;
 	private int radius;
 
-	public Circle(Gfx g, int xCenter, int yCenter, int radius, boolean fill) {
+	public Circle(Gfx g, double xCenter, double yCenter, int radius, boolean fill) {
 		super(g, xCenter, yCenter);
 		this.radius = radius;
 		this.fill = fill;
@@ -51,7 +51,7 @@ public class Circle extends Shape {
 		}
 	}
 
-	private void circlePoints(int cx, int cy, int x, int y, int pix) throws NeptuneException {
+	private void circlePoints(double cx, double cy, double x, double y, int pix) throws NeptuneException {
 		if (x == 0) {
 			super.g.setPixel(cx, cy + y);
 			super.g.setPixel(cx, cy - y);

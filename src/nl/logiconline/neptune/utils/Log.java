@@ -31,4 +31,10 @@ public class Log {
 		}
 	}
 
+	public final static void info(String event) {
+		if(Neptune.SHOW_INFO) {
+			System.err.println((Neptune.SHOW_TIMESTAMP ? ""+(new Date().toString()) +"" : "" ) +" INFO: " + event);
+		}
+	}
+
 }

@@ -1,6 +1,7 @@
 package nl.logiconline.neptune.system;
 import nl.logiconline.neptune.World;
 import nl.logiconline.neptune.assets.ResourceManager;
+import nl.logiconline.neptune.states.State;
 /**
  * Neptune
  * ==========
@@ -13,8 +14,9 @@ import nl.logiconline.neptune.assets.ResourceManager;
 public class Neptune {
 	public static boolean SHOW_FPS = true;
 	public static boolean SHOW_DEBUG = true;
-	public static boolean SHOW_ERROR = false;
-	public static boolean SHOW_EVENTS = false;
+	public static boolean SHOW_INFO = true;
+	public static boolean SHOW_ERROR = true;
+	public static boolean SHOW_EVENTS = true;
 	public static boolean SHOW_TIMESTAMP = false;
 	private static ResourceManager resourceManager;
 	private static World world;
@@ -29,5 +31,9 @@ public class Neptune {
 			Neptune.world = new World();
 		}
 		return Neptune.world;
+	}
+
+	public static State getCurrentState() {
+		return Neptune.world.getState();
 	}
 }

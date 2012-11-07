@@ -1,5 +1,12 @@
 package nl.logiconline.neptune.system.input;
-
+/**
+ * Neptune
+ * ==========
+ * 
+ * @author J. van Baarsen <jeroen@logiconline.nl>
+ * @package nl.logiconline.neptune.system.input
+ * (c) 2012 - LogicOnline
+ */
 import java.util.HashMap;
 
 

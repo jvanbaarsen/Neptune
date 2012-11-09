@@ -15,12 +15,14 @@ import nl.logiconline.neptune.entities.Entity;
 import nl.logiconline.neptune.system.Camera;
 import nl.logiconline.neptune.system.Gfx;
 import nl.logiconline.neptune.system.NeptuneException;
+import nl.logiconline.neptune.utils.Color;
 
 public abstract class State {
 
 	private int id;
 	private ArrayList<Entity> entities = new ArrayList<Entity>();
 	private Camera camera;
+	private int entitiesRendered = 0;
 
 	public State() {
 	}
@@ -83,20 +85,39 @@ public abstract class State {
 	}
 
 	public void render(Gfx g) throws NeptuneException {
-
-		if (g.getCamra() == null) {
+		this.entitiesRendered = 0;
+		if (g.getCamera() == null) {
 			g.setCamera(this.camera);
 		}
 
 		Collections.sort(this.entities, this.entitySorter);
-
 		//TODO Create some sort of system to only render the entities that are in view
 		//Render all the entities
 		if (this.entities.size() > 0) {
 			for (int i = 0; i < this.entities.size(); i++) {
-				this.entities.get(i).render(g);
+				Entity ent = this.entities.get(i);
+				if(this.camera != null) {
+					if((ent.position.x >= (this.camera.getCameraX() - this.camera.xOffset)) && (ent.position.y >= (this.camera.getCameraY() - this.camera.yOffset)) &&
+							((ent.position.x + ent.width) < ((this.camera.getCameraX() + this.camera.getWidth()) + this.camera.xOffset)) &&	((ent.position.y + ent.height) < ((this.camera.getCameraY() + this.camera.getHeight()) + this.camera.yOffset))) {
+						this.entities.get(i).render(g);
+						this.entitiesRendered++;
+					}
+				} else {
+					this.entities.get(i).render(g);
+					this.entitiesRendered++;
+				}
 			}
 		}
+
+		if((this.camera != null) && this.camera.debugCamera) {
+			g.setColor(Color.MAGENTA);
+			g.drawRect(this.camera.getCameraX(), this.camera.getCameraY(), this.camera.getWidth(), this.camera.getHeight());
+			g.setColor(Color.BLACK);
+		}
+	}
+
+	public int getRenderedEntitiesCount() {
+		return this.entitiesRendered;
 	}
 
 	public int getId() {

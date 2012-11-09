@@ -14,7 +14,6 @@ import java.util.HashSet;
 import nl.logiconline.neptune.states.State;
 import nl.logiconline.neptune.system.Gfx;
 import nl.logiconline.neptune.system.NeptuneException;
-import nl.logiconline.neptune.utils.Color;
 import nl.logiconline.neptune.utils.Point2D;
 
 public abstract class Entity {
@@ -24,7 +23,7 @@ public abstract class Entity {
 	private ArrayList<Entity> entities = new ArrayList<Entity>();
 	private HashSet<String> collisionTypes = new HashSet<String>();
 
-	protected Point2D position = new Point2D(0, 0);
+	public Point2D position = new Point2D(0, 0);
 	protected boolean enableSorting = true;
 	protected int zIndex = 0;
 	protected boolean debugHitbox = false;
@@ -46,18 +45,8 @@ public abstract class Entity {
 		}
 	}
 
-	public void render(Gfx g) throws NeptuneException {
-		if(this.entities.size() > 0) {
-			for(int i = 0; i < this.entities.size(); i++) {
-				this.entities.get(i).render(g);
-			}
-		}
-		if(this.debugHitbox && this.collidable) {
-			g.setColor(Color.MAGENTA);
-			g.drawRect(this.getX() + this.hitboxOffsetX, this.getY() + this.hitboxOffsetY, this.hitboxWidth, this.hitboxHeight);
-			g.setColor(Color.BLACK);
-		}
-	}
+
+	public void render(Gfx g) throws NeptuneException {}
 
 	public void addedToState() {}
 

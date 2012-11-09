@@ -32,7 +32,7 @@ public class Gfx {
 		this.camera = camera;
 	}
 
-	public Camera getCamra() {
+	public Camera getCamera() {
 		return this.camera;
 	}
 

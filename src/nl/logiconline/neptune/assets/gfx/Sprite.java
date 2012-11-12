@@ -44,7 +44,7 @@ public class Sprite {
 	}
 
 	public int getPixel(int x, int y) {
-		if((x >= 0) && (y >= 0) && (x <= this.width) && (y <= this.height)) {
+		if((x >= 0) && (y >= 0) && (x < this.width) && (y < this.height)) {
 			return this.pixels[(y * this.width) + x];
 		}
 		return 0;
